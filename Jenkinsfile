@@ -1,14 +1,10 @@
 pipeline {
-	agent { label 'ubuntu' }   
+    agent { label 'ubuntu' } 
     stages {
-        stage('Build') {
+        stage('build') {
             steps {
-		    task wrapper(type: Wrapper) {
-                            gradleVersion = '4.1'
-}
-				sh 'gradle clean build'
+               sh 'gradle clean build'
             }
-		}
-		
-	}
+        }
+    }
 }
